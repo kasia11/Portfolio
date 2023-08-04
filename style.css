@@ -1,0 +1,378 @@
+/*********
+* GLOBAL *
+*********/
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Lugrasimo', cursive,  sans-serif;
+    margin: 0;   
+}
+
+body {
+    font-size: 16px;   
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -ms-flex-pack: distribute;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+
+    align-items: flex-start;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.flex-item {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+    flex-flow: row wrap;
+    flex-direction: column; 
+    
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding: 25px;            
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2, h3 {
+    text-align: center;
+    margin: 15px;
+}
+
+h1,h2,h3,p,ul,u {
+    cursor: default;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+u {
+    text-align: right; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+/******************
+* NAVBAR * FOOTER *
+******************/
+
+nav, footer .flex-container  {
+    background: black;
+    color: #5255fa;
+    text-align: center; 
+    align-items: center;     
+}
+
+nav { 
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navItem {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.navItem > a {
+    display: block;
+    width: 150px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.navItem > a:hover {
+    background: #5552fa;
+    color: black;
+}
+
+footer .flex-item {
+    flex-basis: 30%;
+}
+
+ .social li {
+    display: inline;
+    font-size: 2.5em;
+    padding: 10px;   
+ }
+
+ .sitemap li {
+    padding: 2px;
+ }
+
+ /**********
+ * SECTION *
+ **********/
+
+section {
+    padding: 25px;
+}
+
+section .flex-container {
+    margin: 48px;
+    gap :48px;  
+}
+
+section:nth-of-type(odd) .flex-item, .heading-box {
+    background: #5255fa;
+    color: black;
+}
+
+section:nth-of-type(even) .flex-item {
+    background: #273135;
+    color: #5255fa;
+}
+
+section:nth-of-type(odd) {
+    background: #273135;
+    color: #5255fa;
+}
+
+section:nth-of-type(even) {
+    background: #5255fa;
+    color: black;
+}
+
+/*********
+* BUTTON *
+*********/
+
+.btn {                   
+    font-size: 2em;   
+    text-align: center;
+    width: auto;
+    padding: 5px;
+    border-radius: 10px;
+    display: block;
+    margin: 30px auto 0 auto;
+    background: black;
+    color: #5552fa;
+    border: 1px solid #5552fa;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
+     0 6px 20px 0 rgba(0,0,0,0.19);    
+}
+
+.btn:hover {
+    background: #5552fa;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+     0 17px 50px 0 rgba(0,0,0,0.19);  
+}
+
+/**************
+* DATA-TOOLTIP*
+**************/
+
+[data-tooltip] {
+    position: relative;
+    z-index: 1;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-tooltip]:before {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -110px;
+    padding: 7px;
+    width: 210px;
+    border-radius: 10px;
+    background-color: black;
+    color: #5552fa;
+    content: attr(data-tooltip);
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+[data-tooltip]:after {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid black;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*******
+* HOME *
+*******/
+
+.home {
+    min-height: 450px;
+    position: relative;
+}
+
+.heading-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 20px; 
+}
+
+.home .btn {
+    width: 215px;
+}
+
+/***********************************
+* SKILL * EDUCATION * CERTIFICATES *
+***********************************/
+
+.skill .flex-item, .education .flex-item, .certificates .flex-item {
+    flex-basis: 30%;   
+}
+
+.skill h3 {   
+    text-align: left;
+}
+
+.skill i::before {
+    margin: 20px;
+    font-size: 2em;
+}
+
+.certificates .flex-item, .education .flex-item {   
+    justify-content: space-between;    
+}
+
+/**********
+* ABOUTME *
+**********/
+
+.aboutme .flex-container {
+    display: inline-flex;
+}
+
+.aboutme .flex-item {
+    flex-basis: 45%;
+    place-content: center space-evenly;
+}
+
+.aboutme img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.aboutme h3::before,
+.aboutme h3::after {
+    content: ' ';
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    background: #273135;
+}
+
+.aboutme h3::before {
+    top: 50%;
+    left: 25%;
+}
+
+.aboutme h3::after {
+    top: 50%;
+    right: 25%;
+}
+
+.aboutme h3 {
+    position: relative;
+}
+
+.aboutme p {
+    margin-bottom: 10px;
+}
+
+.aboutme p:last-of-type {
+    text-align: center;
+}
+
+/*******
+* WORK *                
+*******/
+.work .flex-item {
+    flex-basis: 45%;
+}
+
+/**********
+* CONTACT *
+**********/
+
+.contact-box {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.contact-box label {
+    font-size: 1.5em;
+}
+
+.contact-box input, textarea, select {
+    display: block;
+    width: 100%;
+    margin: 15px 0 15px;
+    border-radius: 10px;
+    border: 1px solid #5552fa;
+    padding: 12px 20px;
+    outline: none;
+}
+
+.contact-box textarea {
+    resize: none;
+}
+
+.contact-box .btn {
+    width: 75%;
+    margin: 0 auto;
+    background: black;
+    color: #5255fa;
+    cursor: pointer;
+}
+
+

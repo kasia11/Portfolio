@@ -1,0 +1,291 @@
+/*********
+* GLOBAL *
+*********/
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Lugrasimo', cursive,  sans-serif;
+    margin: 0;   
+}
+
+body {
+    font-size: 16px;   
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -ms-flex-pack: distribute;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+
+    align-items: flex-start;
+    align-items: stretch;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+.flex-item {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+    flex-flow: row wrap;
+    flex-direction: column; 
+    
+    justify-content: flex-start;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 25px;            
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2, h3 {
+    text-align: center;
+    margin: 15px;
+}
+
+h1,h2,h3,p,ul,u {
+    cursor: default;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+u {
+    text-align: right; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+/******************
+* NAVBAR * FOOTER *
+******************/
+
+nav, footer .flex-container  {
+    background: black;
+    color: #5255fa;
+    text-align: center; 
+    align-items: center;     
+}
+
+nav { 
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navItem {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.navItem > a {
+    display: block;
+    width: 150px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.navItem > a:hover {
+    background: #5552fa;
+    color: black;
+}
+
+footer .flex-item {
+    flex-basis: 30%;
+}
+
+ .social li {
+    display: inline;
+    font-size: 2.5em;
+    padding: 10px;   
+ }
+
+ .sitemap li {
+    padding: 2px;
+ }
+
+ /**********
+ * SECTION *
+ **********/
+
+section {
+    padding: 25px;
+}
+
+section .flex-container {
+    margin: 48px;
+    gap :48px;  
+}
+
+section:nth-of-type(odd) .flex-item, .heading-box {
+    background: #273135;
+    color: #5255fa;
+}
+
+section:nth-of-type(even) .flex-item {
+    background: #5255fa;
+    color: black;
+}
+
+section:nth-of-type(odd) {
+    background: #5255fa;
+    color: black;
+}
+
+section:nth-of-type(even) {
+    background: #273135;
+    color: #5255fa;
+}
+
+/*********
+* BUTTON *
+*********/
+
+.btn {                   
+    font-size: 2em;   
+    text-align: center;
+    width: auto;
+    padding: 5px;
+    border-radius: 10px;
+    display: block;
+    margin: 30px auto 0 auto;
+    background: black;
+    color: #5552fa;
+    border: 1px solid #5552fa;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
+     0 6px 20px 0 rgba(0,0,0,0.19);    
+}
+
+.btn:hover {
+    background: #5552fa;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+     0 17px 50px 0 rgba(0,0,0,0.19);  
+}
+
+/*******
+* HOME *
+*******/
+
+.home {
+    min-height: 450px;
+    position: relative;
+}
+
+.heading-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 20px; 
+}
+
+.home .btn {
+    width: 215px;
+}
+
+/****
+* C *
+*****/
+
+
+
+/********
+* EXCEL *
+********/
+
+.excel .flex-item {
+    flex-basis: 80%;
+    align-items: center;
+}
+
+/***********
+* GEOGEBRA *
+***********/
+
+.geogebra .flex-item {
+    flex-basis: 80%;
+    align-items: center;
+}
+
+
+/*******
+* JAVA *
+*******/
+
+
+
+/*************
+* JAVASCRIPT *
+*************/
+
+
+
+/******
+* SQL *
+******/
+
+
+
+/**********
+* CONTACT *
+**********/
+
+.contact-box {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.contact-box label {
+    font-size: 1.5em;
+}
+
+.contact-box input, textarea, select {
+    display: block;
+    width: 100%;
+    margin: 15px 0 15px;
+    border-radius: 10px;
+    border: 1px solid #5552fa;
+    padding: 12px 20px;
+    outline: none;
+}
+
+.contact-box textarea {
+    resize: none;
+}
+
+.contact-box .btn {
+    width: 75%;
+    margin: 0 auto;
+    background: black;
+    color: #5255fa;
+    cursor: pointer;
+}
